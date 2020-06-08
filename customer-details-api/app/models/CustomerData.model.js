@@ -5,7 +5,8 @@ const CustomerSchema = mongoose.Schema({
     cust_name: String,
     age:Number,
     sex:String,
-    address:{  type: Object},
+    address1:String,
+    address2:String,
     created_date:{type:String},
     updated_date:{type:String}
 }, {

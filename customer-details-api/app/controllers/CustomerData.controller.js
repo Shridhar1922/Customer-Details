@@ -27,7 +27,7 @@ exports.create = (req, res) => {
             message: "Customer Sex can not be empty"
         });
     }
-console.log("sdddddd",req.body.address)
+// console.log("sdddddd",req.body.address)
 
     // Create a CustomerData
     const CustData = new CustomerData({
@@ -35,7 +35,8 @@ console.log("sdddddd",req.body.address)
         cust_name: req.body.cust_name,
         age:req.body.age,
         sex:req.body.sex,
-        address:req.body.address
+        address1:req.body.address1,
+        address2:req.body.address2
     });
 
     // Save CustomerData in the database
@@ -60,7 +61,6 @@ exports.findAll = (req, res) => {
       limit:pagination,
       skip:(page-1)*pagination,
       sort:{createdAt:-1},
-      projection: { address: 0 }
     })
     .then(CustomerData => {
        
@@ -84,7 +84,7 @@ exports.findOne = (req, res) => {
                 message: "CustomerData not found with id " + req.params.custId
             });            
         }
-        res.send(_.pick(CustomerData, ['_id', 'cust_id', 'address']));
+        res.send(_.pick(CustomerData, ['_id', 'cust_id', 'address1',"address2"]));
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({

@@ -1,0 +1,62 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+.otherpage{
+  background-color: #f5f5f5;
+}
+
+.container h1{
+    margin: 20px 0px;
+    background: gold;
+    color: black;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.container .cust_row{
+    margin: 20px 0px;
+}
+
+.container .cust_row .cust_col{
+    border: 1px solid gold;
+    padding: 5px 2px;
+    margin: 0 3px;
+    background: #ffffff;
+    box-shadow: 0px 0px 2px 0px gold;
+}
+
+.container .cust_row .cust_col .cust_name{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: black;
+    padding: 10px 0px;
+    background: gold;
+}
+.container .cust_row .cust_col .cust_id, .container .cust_row .cust_col .cust_age, .container .cust_row .cust_col .cust_sex,.container .cust_row .cust_col .cust_address{
+    font-weight: 600;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;  
+    border-top: 1px solid #d1d1d159;
+}
+
+.show_btn{
+    border: 1px solid lightgray;
+    font-weight: 400;
+}

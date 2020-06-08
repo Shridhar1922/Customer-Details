@@ -1,10 +1,10 @@
-export const REQUEST_HELLO_WORLD = "REQUEST_HELLO_WORLD";
-export const RECEIVE_HELLO_WORLD = "RECEIVE_HELLO_WORLD";
+export const REQUEST_CUSTOMER_DATA_API = "REQUEST_CUSTOMER_DATA_API";
+export const RECEIVE_CUSTOMER_DATA_API = "RECEIVE_CUSTOMER_DATA_API";
 
-export const requestHelloWorld =()=>({
-    type:REQUEST_HELLO_WORLD
+export const requestCustomerDataApi =()=>({
+    type:REQUEST_CUSTOMER_DATA_API
 })
 
-export const receiveHelloWorld =text=>({
-    type:RECEIVE_HELLO_WORLD,text
+export const receiveCustomerDataApi =data=>({
+    type:RECEIVE_CUSTOMER_DATA_API,data
 })

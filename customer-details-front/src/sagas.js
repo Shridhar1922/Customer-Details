@@ -1,15 +1,17 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 // import Api from '...'
+import {fetchData} from './api';
 
-import {receiveHelloWorld} from './actions';
+import {REQUEST_CUSTOMER_DATA_API,receiveCustomerDataApi} from './actions';
 // import helloWorld from './reducers/helloWorld';
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* helloWorld(action) {
+function* getCustomerData(action) {
    try {
-     // const user = yield call(Api.fetchUser, action.payload.userId);
-      yield put(receiveHelloWorld('Hello World From Redux Sagas!'));
+     const data = yield call(fetchData);
+     console.log("sagas data",data)
+      yield put(receiveCustomerDataApi(data));
    } catch (e) {
-      yield put(receiveHelloWorld('Hello World From Redux Sagas!'));
+     console.log("error",e);
    }
 }
 
@@ -29,7 +31,7 @@ function* helloWorld(action) {
   and only the latest one will be run.
 */
 function* mySaga() {
-  yield takeLatest("REQUEST_HELLO_WORLD", helloWorld);
+  yield takeLatest(REQUEST_CUSTOMER_DATA_API, getCustomerData);
 }
 
 export default mySaga;
